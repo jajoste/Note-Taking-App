@@ -2,4 +2,36 @@
 
 {% block title %}Home{% endblock %}
 
-{% block content %}<h1>Home Page</h1>{% endblock %}
+{% block content %}
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes"></ul>
+{% for note in user.notes%}
+    <li class="list-group-item justify-content-between d-flex align-items-center" id="{{note.id}}">
+        
+        <!-- <form action="" method="post">
+            <button type='button' class='close' onClick="deleteNote({{note.id}})">
+                <span aria-hidden="true">&times;</span>
+            </button> 
+        </form> -->
+        
+        
+            {{note.data}}
+        
+            <span class="badge  badge-pill">
+                <form method="post" action="{{ url_for('views.delete_note', note_id=note.id) }}">
+                <input class="btn" type="submit" name="delete" value=&times;>
+                </form>
+            </span>
+        
+    </li>
+{% endfor %}
+<br/>
+</ul>
+<form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br/>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form>
+{% endblock %}
