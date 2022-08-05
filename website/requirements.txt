@@ -1,1 +1,4 @@
 werkzeug==2.1.2
+flask
+Flask-SQLAlchemy
+flask-login
