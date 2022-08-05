@@ -1,0 +1,9 @@
+These are some Test Accounts for the wesbite:
+
+Name:       John Smith
+Email:      johnsmith@gmail.com
+Password:   password
+
+Name:       Peter Johnson
+Email:      peterjohnson@gmail.com
+Password:   password
